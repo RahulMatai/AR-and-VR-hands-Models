@@ -1,0 +1,162 @@
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <body style="margin : 0px; overflow: hidden;">
+    <style>
+
+
+      .text-box {
+        margin-left: 44vw;
+       margin-top: 42vh;
+    }
+    
+    .btn:link,
+    .btn:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+        position: absolute;
+    }
+    
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-white {
+        background-color: rgb(3, 0, 0);
+        color: white;
+    }
+    h1 {
+      font-size: 70px;
+      font-weight: 600;
+      background-image: linear-gradient(to left, #553c9a, #b393d3);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+       
+     
+    }
+    
+    
+
+    </style>
+    <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+      <button class="btn btn-white btn-animate">
+          Next PLanet
+      </button>
+      <h1 id="planet_name">SUN</h1>
+  </div>
+  <script>
+    var click = 0;
+    document.querySelector("button").addEventListener("click", (e)=> {
+      const par = document.getElementById("demo");
+      const name = document.getElementById("planet_name");
+      click= click +1;
+      if (click == 1){
+        const chil = par.setAttribute('gltf-model', 'mercury.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='Mercury'
+      
+      }
+      if (click == 2){
+        const chil = par.setAttribute('gltf-model', 'venus.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='VENUS'
+      }
+      if (click == 3){
+        const chil = par.setAttribute('gltf-model', 'earth.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='EARTH'
+      }
+      if (click == 4){
+        const chil = par.setAttribute('gltf-model', 'moon.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='MOON'
+      }
+      if (click == 5){
+        const chil = par.setAttribute('gltf-model', 'mars.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='Mars'
+      }
+      
+      if (click == 6)
+      {
+        const chil = par.setAttribute('gltf-model', 'jupiter.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='JUPITER'
+      
+      }
+      if (click == 7)
+      {
+        const chil = par.setAttribute('gltf-model', 'saturn.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='SATURN'
+      }
+
+      if (click == 8)
+      {
+        const chil = par.setAttribute('gltf-model', 'uranus.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='URANUS'
+      }
+
+      if (click == 9)
+      {
+        const chil = par.setAttribute('gltf-model', 'neptune.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='NEPTUNE'
+
+        
+      }
+      
+      if (click == 10){
+        const chil = par.setAttribute('gltf-model', 'sun.glb');
+        const chill = par.getAttribute('gltf-model');
+        name.innerHTML='SUN'
+        click=0;
+      }
+      
+      
+      
+    })
+  </script>
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+      <a-entity id="demo"
+          position="0 0 0"
+          animation__rotation="
+          property: rotation;
+    
+          from: 0 0 0;
+          to: 360 360 360;
+          loop: true;
+          dur: 10000;
+          dir: alternate;"
+          light = "type: ambient;
+          color: #fff
+          intensity: 100"
+          scale="0.5 0.5 0.5"
+          gltf-model="sun.glb">
+        
+        </a-entity>
+
+      </a-marker>
+
+      <a-entity camera>
+      </a-entity>
+      
+    </a-scene>
+    
+  </body>
+
+</html>
